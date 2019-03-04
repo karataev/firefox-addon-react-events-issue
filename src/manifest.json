@@ -1,0 +1,26 @@
+{
+  "name": "Firefox injection with React",
+  "version": "0.0.1",
+  "description": "Firefox injection with React",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "all_frames": false,
+      "js": [
+        "react.production.min.js",
+        "react-dom.production.min.js",
+        "content.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": [
+    "webNavigation"
+  ],
+  "icons": {
+    "128": "img/128.png"
+  }
+}

@@ -7,8 +7,8 @@
     {
       "all_frames": false,
       "js": [
-        "react.production.min.js",
-        "react-dom.production.min.js",
+        "react.development.js",
+        "react-dom.development.js",
         "content.js"
       ],
       "matches": [

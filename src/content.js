@@ -13,10 +13,11 @@ document.addEventListener('DOMContentLoaded', e => {
     background: '#fff',
   };
 
-  const App = React.createElement('div', {style, onClick: function(e) {console.log('Click from React')}}, 'CLICK ME');
+  const {h, render} = window.preact;
+  const App = h('div', {style, onClick: function(e) {console.log('Click from preact')}}, 'CLICK ME');
   mount.addEventListener('click', e => {
     console.log('Click from addEventListener');
   });
-  ReactDOM.render(App, mount);
+  render(App, mount);
   console.log('injected');
 });

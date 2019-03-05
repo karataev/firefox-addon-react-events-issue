@@ -7,8 +7,7 @@
     {
       "all_frames": false,
       "js": [
-        "react.development.js",
-        "react-dom.development.js",
+        "preact.dev.js",
         "content.js"
       ],
       "matches": [

@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', e => {
   };
 
   const {h, render} = window.preact;
-  const App = h('div', {style, onClick: function(e) {console.log('Click from preact')}}, 'CLICK ME');
+  const App = h('div', {style, id: 'foo', onClick: function(e) {console.log('Click from preact')}}, 'CLICK ME');
   mount.addEventListener('click', e => {
     console.log('Click from addEventListener');
   });

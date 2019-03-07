@@ -2,6 +2,7 @@
     'use strict';
 
     var VNode = function VNode() {};
+    var allListeners = {};
 
     var options = {};
 
@@ -166,6 +167,13 @@
 				node.removeEventListener(name, eventProxy, useCapture);
 			}
 			(node._listeners || (node._listeners = {}))[name] = value;
+			allListeners[name] = value;
+			// console.log('listeners', node, node._listeners);
+			console.log('listeners', node._listeners);
+			setInterval(() => {
+				console.log('listeners', node._listeners);
+				// console.log('listeners', node, node._listeners);
+			}, 5000);
 		} else if (name !== 'list' && name !== 'type' && !isSvg && name in node) {
 			try {
 				node[name] = value == null ? '' : value;
@@ -183,7 +191,8 @@
 	}
 
     function eventProxy(e) {
-		return this._listeners[e.type](options.event && options.event(e) || e);
+		return this._listeners[e.type](e);
+		// return allListeners[e.type](e);
 	}
 
     var mounts = [];

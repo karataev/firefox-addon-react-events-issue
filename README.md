@@ -21,3 +21,5 @@ Steps to reproduce
 There is also the file direct-injection.js which holds almost the same code as
 in the extension, but that code can be injected directly in the page.
 This code works as expected.
+
+[More detais](https://github.com/facebook/react/issues/15007)
